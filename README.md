@@ -1,45 +1,57 @@
-# vue3-myelement
 
-This template should help get you started developing with Vue 3 in Vite.
+# vue3-myelement 项目介绍
 
-## Recommended IDE Setup
+## 项目概述
+vue3-myelement 是一个基于 Vue 3 开发的UI组件库，类似于 Element Plus，使用 TypeScript 构建。该项目采用了 Vite 作为构建工具，提供了丰富的UI组件和功能。
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## 技术栈
+- Vue 3
+- TypeScript
+- Vite
+- PostCSS
+- Vitest (单元测试)
+- VitePress (文档)
 
-## Type Support for `.vue` Imports in TS
+## 已实现组件
+目前已实现的组件包括：
+- Button（按钮）：支持多种类型、尺寸、状态
+- Icon（图标）：集成 FontAwesome 图标库
+- Collapse（折叠面板）
+- Tooltip（文字提示）
+- Dropdown（下拉菜单）
+- Message（消息提示）
+- Input（输入框）
+- Switch（开关）
+- Select（选择器）
+- Form（表单）
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+## 设计特点
+1. **组件化设计**：每个组件独立维护
+2. **TypeScript支持**：完善的类型定义系统
+3. **可定制主题**：使用 PostCSS 实现样式系统
+4. **完善的文档**：通过 VitePress 构建组件文档和示例
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
+## 项目结构
+```
+vue3-myelement/
+├── src/
+│   ├── components/     # 组件库目录
+│   ├── hooks/          # 自定义钩子
+│   ├── style/          # 样式文件
+│   └── assets/         # 资源文件
+├── docs/               # 文档目录
+└── ...
 ```
 
-### Compile and Hot-Reload for Development
+## 开发指南
+1. 安装依赖：`npm install`
+2. 开发模式：`npm run dev`
+3. 构建项目：`npm run build`
+4. 运行测试：`npm run test:unit`
+5. 文档开发：`npm run docs:dev`
 
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+## 特色功能
+- 支持按需引入
+- 提供完善的类型定义
+- 现代化的设计风格
+- 丰富的组件交互性
