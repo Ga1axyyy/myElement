@@ -23,7 +23,8 @@ vue3-myelement 是一个基于 Vue 3 开发的UI组件库，类似于 Element Pl
 - Input（输入框）
 - Switch（开关）
 - Select（选择器）
-- Form（表单）
+- Form（表单）(开发中)
+- Alert(弹窗)(开发中)
 
 ## 设计特点
 1. **组件化设计**：每个组件独立维护
