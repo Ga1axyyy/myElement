@@ -1,0 +1,5 @@
+declare module 'postcss-each-variables'
+declare module 'postcss-nested'
+declare module 'postcss-each'
+declare module 'postcss-for'
+declare module 'postcss-color-mix'

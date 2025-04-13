@@ -1,0 +1,123 @@
+.my-button {
+  --my-button-font-weight: var(--my-font-weight-primary);
+  --my-button-border-color: var(--my-border-color);
+  --my-button-bg-color: var(--my-fill-color-blank);
+  --my-button-text-color: var(--my-text-color-regular);
+  --my-button-disabled-text-color: var(--my-disabled-text-color);
+  --my-button-disabled-bg-color: var(--my-fill-color-blank);
+  --my-button-disabled-border-color: var(--my-border-color-light);
+  --my-button-hover-text-color: var(--my-color-primary);
+  --my-button-hover-bg-color: var(--my-color-primary-light-9);
+  --my-button-hover-border-color: var(--my-color-primary-light-7);
+  --my-button-active-text-color: var(--my-button-hover-text-color);
+  --my-button-active-border-color: var(--my-color-primary);
+  --my-button-active-bg-color: var(--my-button-hover-bg-color);
+  --my-button-outline-color: var(--my-color-primary-light-5);
+  --my-button-active-color: var(--my-text-color-primary);
+}
+.my-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  height: 32px;
+  white-space: nowrap;
+  cursor: pointer;
+  color: var(--my-button-text-color);
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  transition: .1s;
+  font-weight: var(--my-button-font-weight);
+  user-select: none;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  background-color: var(--my-button-bg-color);
+  border: var(--my-border);
+  border-color: var(--my-button-border-color);
+  padding: 8px 15px;
+  font-size: var(--my-font-size-base);
+  border-radius: var(--my-border-radius-base);
+  & + & {
+    margin-left: 12px;
+  }
+  &:hover,
+  &:focus {
+    color: var(--my-button-hover-text-color);
+    border-color: var(--my-button-hover-border-color);
+    background-color: var(--my-button-hover-bg-color);
+    outline: none;    
+  }
+  &:active {
+    color: var(--my-button-active-text-color);
+    border-color: var(--my-button-active-border-color);
+    background-color: var(--my-button-active-bg-color);
+    outline: none;
+  }
+  &.is-plain {
+    --my-button-hover-text-color: var(--my-color-primary);
+    --my-button-hover-bg-color: var(--my-fill-color-blank);
+    --my-button-hover-border-color: var(--my-color-primary);    
+  }
+  /*round*/
+  &.is-round {
+    border-radius: var(--my-border-radius-round);
+  }
+  /*circle*/
+  &.is-circle {
+    border-radius: 50%;
+    padding: 8px;
+  }
+  /*disabled*/
+  &.is-disabled, &.is-disabled:hover, &.is-disabled:focus, 
+  &[disabled], &[disabled]:hover, &[disabled]:focus 
+  {
+    color: var(--my-button-disabled-text-color);
+    cursor: not-allowed;
+    background-image: none;
+    background-color: var(--my-button-disabled-bg-color);
+    border-color: var(--my-button-disabled-border-color);
+  }
+
+}
+@each $val in primary,success,warning,info,danger {
+  .my-button--$(val) {
+    --my-button-text-color: var(--my-color-white);
+    --my-button-bg-color: var(--my-color-$(val));
+    --my-button-border-color: var(--my-color-$(val));
+    --my-button-outline-color: var(--my-color-$(val)-light-5);
+    --my-button-active-color: var(--my-color-$(val)-dark-2);
+    --my-button-hover-text-color: var(--my-color-white);
+    --my-button-hover-bg-color: var(--my-color-$(val)-light-3);
+    --my-button-hover-border-color: var(--my-color-$(val)-light-3);
+    --my-button-active-bg-color: var(--my-color-$(val)-dark-2);
+    --my-button-active-border-color: var(--my-color-$(val)-dark-2);
+    --my-button-disabled-text-color: var(--my-color-white);
+    --my-button-disabled-bg-color: var(--my-color-$(val)-light-5);
+    --my-button-disabled-border-color: var(--my-color-$(val)-light-5);
+  }
+  .my-button--$(val).is-plain {
+    --my-button-text-color: var(--my-color-$(val));
+    --my-button-bg-color: var(--my-color-$(val)-light-9);
+    --my-button-border-color: var(--my-color-$(val)-light-5);
+    --my-button-hover-text-color: var(--my-color-white);
+    --my-button-hover-bg-color: var(--my-color-$(val));
+    --my-button-hover-border-color: var(--my-color-$(val));
+    --my-button-active-text-color: var(--my-color-white);
+  }
+}
+.my-button--large {
+  --my-button-size: 40px;
+  height: var(--my-button-size);
+  padding: 12px 19px;
+  font-size: var(--my-font-size-base);
+  border-radius: var(--my-border-radius-base);
+}
+.my-button--small {
+  --my-button-size: 24px;
+  height: var(--my-button-size);
+  padding: 5px 11px;
+  font-size: 12px;
+  border-radius: calc(var(--my-border-radius-base) - 1px);
+}
+

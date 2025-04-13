@@ -1,0 +1,23 @@
+:root {
+  --vp-c-brand: var(--my-color-primary);
+  --vp-c-brand-3: var(--my-color-primary);
+  --vp-c-brand-2: var(--my-color-primary-light-5);
+
+  --vp-c-brand-soft: #265f99;
+
+  --component-preview-bg: var(--vp-code-block-bg);
+  --component-preview-soft: var(--vp-code-block-bg-light);
+}
+
+body {
+  color: var(--vp-c-text-1);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: var(--vp-c-text-1);
+}

@@ -1,0 +1,74 @@
+:root {
+  /* colors */
+  --my-color-white: #ffffff;
+  --my-color-black: #000000;
+  --colors: (
+    primary: #409eff,
+    success: #67c23a,
+    warning: #e6a23c,
+    danger: #f56c6c,
+    info: #909399
+  );
+
+  @each $val, $color in var(--colors) {
+    --my-color-$(val): $(color);
+    @for $i from 3 to 9 by 2 {
+      --my-color-$(val)-light-$(i): mix(#fff, $(color), .$(i))
+    }
+    --my-color-$(val)-light-8: mix(#fff, $(color), .8);
+    --my-color-$(val)-dark-2: mix(#000, $(color), .2);
+  }
+
+  --my-bg-color: #ffffff;
+  --my-bg-color-page: #f2f3f5;
+  --my-bg-color-overlay: #ffffff;
+  --my-text-color-primary: #303133;
+  --my-text-color-regular: #606266;
+  --my-text-color-secondary: #909399;
+  --my-text-color-placeholder: #a8abb2;
+  --my-text-color-disabled: #c0c4cc;
+  --my-border-color: #dcdfe6;
+  --my-border-color-light: #e4e7ed;
+  --my-border-color-lighter: #ebeef5;
+  --my-border-color-extra-light: #f2f6fc;
+  --my-border-color-dark: #d4d7de;
+  --my-border-color-darker: #cdd0d6;
+  --my-fill-color: #f0f2f5;
+  --my-fill-color-light: #f5f7fa;
+  --my-fill-color-lighter: #fafafa;
+  --my-fill-color-extra-light: #fafcff;
+  --my-fill-color-dark: #ebedf0;
+  --my-fill-color-darker: #e6e8eb;
+  --my-fill-color-blank: #ffffff;
+
+  /* border */
+  --my-border-width: 1px;
+  --my-border-style: solid;
+  --my-border-color-hover: var(--my-text-color-disabled);
+  --my-border: var(--my-border-width) var(--my-border-style) var(--my-border-color);
+  --my-border-radius-base: 4px;
+  --my-border-radius-small: 2px;
+  --my-border-radius-round: 20px;
+  --my-border-radius-circle: 100%;
+
+  /*font*/
+  --my-font-size-extra-large: 20px;
+  --my-font-size-large: 18px;
+  --my-font-size-medium: 16px;
+  --my-font-size-base: 14px;
+  --my-font-size-small: 13px;
+  --my-font-size-extra-small: 12px;
+  --my-font-family:
+    'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
+    '\5fae\8f6f\96c5\9ed1', Arial, sans-serif;
+  --my-font-weight-primary: 500;
+
+  /*disabled*/
+  --my-disabled-bg-color: var(--my-fill-color-light);
+  --my-disabled-text-color: var(--my-text-color-placeholder);
+  --my-disabled-border-color: var(--my-border-color-light);
+
+  /*animation*/
+  --my-transition-duration: 0.3s;
+  --my-transition-duration-fast: 0.2s;
+}

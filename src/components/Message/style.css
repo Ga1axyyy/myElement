@@ -1,0 +1,61 @@
+.my-message {
+  --my-message-bg-color: var(--my-color-info-light-9);
+  --my-message-border-color: var(--my-border-color-lighter);
+  --my-message-padding: 15px 19px;
+  --my-message-close-size: 16px;
+  --my-message-close-icon-color: var(--my-text-color-placeholder);
+  --my-message-close-hover-color: var(--my-text-color-secondary);
+}
+
+.my-message {
+  width: fit-content;
+  max-width: calc(100% - 32px);
+  box-sizing: border-box;
+  border-radius: var(--my-border-radius-base);
+  border-width: var(--my-border-width);
+  border-style: var(--my-border-style);
+  border-color: var(--my-message-border-color);
+  position: fixed;
+  left: 50%;
+  top: 20px;
+  transform: translateX(-50%);
+  background-color: var(--my-message-bg-color);
+  padding: var(--my-message-padding);
+  display: flex;
+  align-items: center;
+  transition:
+    top var(--my-transition-duration),
+    opacity var(--my-transition-duration),
+    transform var(--my-transition-duration);
+
+  .my-message__content {
+    color: var(--my-message-text-color);
+    overflow-wrap: anywhere;
+  }
+  &.is-close .my-message__content {
+    padding-right: 30px;
+  }
+  .my-message__close {
+    display: flex;
+    align-items: center;
+  }
+  .my-message__close svg {
+    cursor: pointer;
+  }
+}
+@each $val in info, success, warning, danger {
+  .my-message--$(val) {
+    --my-message-bg-color: var(--my-color-$(val)-light-9);
+    --my-message-border-color: var(--my-color-$(val)-light-8);
+    --my-message-text-color: var(--my-color-$(val));
+    .my-message__close {
+      --my-icon-color: var(--my-color-$(val));
+    }
+  }
+}
+.my-message.fade-up-enter-from,
+.my-message.fade-up-leave-to {
+  opacity: 0;
+  /* X轴50%，Y轴100% */
+  transform: translate(-50%, -100%);
+}

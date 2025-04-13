@@ -1,0 +1,20 @@
+.my-icon {
+  --my-icon-color: inherit;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  fill: currentColor;
+  color: var(--my-icon-color);
+  font-size: inherit;
+}
+
+[class*='my-icon'] + span {
+  margin-left: 6px;
+}
+
+@each $val in primary, info, success, warning, danger {
+  .my-icon--$(val) {
+    --my-icon-color: var(--my-color-$(val));
+  }
+}
